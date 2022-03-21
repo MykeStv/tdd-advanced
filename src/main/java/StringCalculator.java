@@ -21,7 +21,12 @@ public class StringCalculator {
                 if (number < 0) {
                     throw new Exception("No se permiten numeros negativos");
                 }
-                accumulator += number;
+                if (number > 1000) {
+                    continue;
+                } else {
+                    accumulator += number;
+                }
+
             }
 
 

@@ -60,7 +60,14 @@ class StringCalculatorTest {
 
     }
 
-    
+    //Los números superiores a 1000 se ignoran
+    @Test
+    void numberGreaterThan1000IgnoredTest() throws Exception {
+        assertThat(stringCalculator.add("2,1000"), is(1002));
+        assertThat(stringCalculator.add("2,1001"), is(2));
+        assertThat(stringCalculator.add("1004,2000,9"), is(9));
+
+    }
 
 
 }
