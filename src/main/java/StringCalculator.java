@@ -10,19 +10,30 @@ public class StringCalculator {
         } else if (values.length() > 0) {
             int temp;
             String delimiter = "[,|\n]";
+            String character = "";
+            int numChar = 0;
 
-            try {
-                temp = Integer.parseInt("" + values.charAt(0));
-            } catch (Exception e) {
-                if("" + values.charAt(0) != "-") {
-                    delimiter = "" + values.charAt(0);
+            while (true) {
 
+                try {
+                    temp = Integer.parseInt("" + values.charAt(numChar));
+                    break;
+                } catch (Exception e) {
+                    if("" + values.charAt(0) != "-") {
+                        character = "" + values.charAt(numChar);
+                        numChar++;
+                        delimiter = character.repeat(numChar);
+                    }
                 }
+
             }
+
+
+
 
             List<String> listString = new ArrayList<>();
             if (delimiter != "[,|\n]") {
-                listString = List.of(values.substring(1).split(delimiter));
+                listString = List.of(values.substring(numChar).split(delimiter));
             } else {
                 listString = List.of(values.split(delimiter));
             }

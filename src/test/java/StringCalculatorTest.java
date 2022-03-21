@@ -74,5 +74,11 @@ class StringCalculatorTest {
         assertThat(stringCalculator.add("#2#1000"), is(1002));
     }
 
+    //varios delimitadores de lines
+    @Test
+    void delimiterOfLineMiltipleTest() throws Exception {
+        assertThat(stringCalculator.add("###2###5"), is(7));
+        assertThat(stringCalculator.add("@@8@@4"), is(12));
+    }
 
 }
