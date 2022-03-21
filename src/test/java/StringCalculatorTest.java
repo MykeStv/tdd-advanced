@@ -37,7 +37,14 @@ class StringCalculatorTest {
         assertThat(stringCalculator.add("0\n2"), is(2));
         assertThat(stringCalculator.add("3\n2"), is(5));
         assertThat(stringCalculator.add("1\n7"), is(8));
-
     }
+
+    //Tres números, delimitados de cualquier manera, devuelven la suma
+    @Test
+    void threeNumbersSumTest() throws Exception {
+        assertThat(stringCalculator.add("2,5\n3"), is(10));
+        assertThat(stringCalculator.add("1,2\n4"), is(7));
+    }
+
 
 }
