@@ -46,5 +46,21 @@ class StringCalculatorTest {
         assertThat(stringCalculator.add("1,2\n4"), is(7));
     }
 
+    //Los números negativos arrojan una excepción
+    @Test
+    void negativeNumbersExceptionTest() throws Exception {
+
+        /*var value = stringCalculator.add("1,-1");*/
+
+        //Es una excepcion por ser numero negativo
+        Exception thrown = assertThrows(Exception.class, () -> {
+            stringCalculator.add("1,-1");
+        });
+        assertEquals("No se permiten numeros negativos", thrown.getMessage());
+
+    }
+
+    
+
 
 }

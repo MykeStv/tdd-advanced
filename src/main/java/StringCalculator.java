@@ -18,6 +18,9 @@ public class StringCalculator {
             int accumulator = 0;
 
             for(Integer number: numberList) {
+                if (number < 0) {
+                    throw new Exception("No se permiten numeros negativos");
+                }
                 accumulator += number;
             }
 
