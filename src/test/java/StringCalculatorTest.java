@@ -66,7 +66,12 @@ class StringCalculatorTest {
         assertThat(stringCalculator.add("2,1000"), is(1002));
         assertThat(stringCalculator.add("2,1001"), is(2));
         assertThat(stringCalculator.add("1004,2000,9"), is(9));
+    }
 
+    //Se puede definir un solo delimitador de caracteres en la primera línea
+    @Test
+    void delimiterOfLineTest() throws Exception {
+        assertThat(stringCalculator.add("#2#1000"), is(1002));
     }
 
 

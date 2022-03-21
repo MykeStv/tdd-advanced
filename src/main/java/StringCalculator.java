@@ -9,11 +9,26 @@ public class StringCalculator {
             return 0;
         } else if (values.length() > 0) {
             int temp;
+            String delimiter = "[,|\n]";
 
-            List<String> listString = Arrays.asList(values.split("[,|\n]"));
+            try {
+                temp = Integer.parseInt("" + values.charAt(0));
+            } catch (Exception e) {
+                if("" + values.charAt(0) != "-") {
+                    delimiter = "" + values.charAt(0);
 
+                }
+            }
+
+            List<String> listString = new ArrayList<>();
+            if (delimiter != "[,|\n]") {
+                listString = List.of(values.substring(1).split(delimiter));
+            } else {
+                listString = List.of(values.split(delimiter));
+            }
 
             List<Integer> numberList = new ArrayList<>();
+
             listString.forEach(number -> numberList.add(Integer.parseInt(number)));
             int accumulator = 0;
 
