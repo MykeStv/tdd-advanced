@@ -10,7 +10,7 @@ public class StringCalculator {
         } else if (values.length() > 0) {
             int temp;
 
-            List<String> listString = Arrays.asList(values.split(","));
+            List<String> listString = Arrays.asList(values.split("[,|\n]"));
 
 
             List<Integer> numberList = new ArrayList<>();

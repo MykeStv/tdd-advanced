@@ -28,6 +28,16 @@ class StringCalculatorTest {
     @Test
     void twoNumberCommaReturnsSumTest() throws Exception {
         assertThat(stringCalculator.add("2,3"), is(5));
+        assertThat(stringCalculator.add("7,9"), is(16));
+    }
+
+    //Dos números, delimitados por saltos de línea, devuelve la suma
+    @Test
+    void twoNumbersNewLineSumTest() throws Exception {
+        assertThat(stringCalculator.add("0\n2"), is(2));
+        assertThat(stringCalculator.add("3\n2"), is(5));
+        assertThat(stringCalculator.add("1\n7"), is(8));
+
     }
 
 }
