@@ -24,4 +24,10 @@ class StringCalculatorTest {
         assertThat(stringCalculator.add("5"), is(5));
     }
 
+    //Dos números, delimitados por comas, devuelven la suma
+    @Test
+    void twoNumberCommaReturnsSumTest() throws Exception {
+        assertThat(stringCalculator.add("2,3"), is(5));
+    }
+
 }
