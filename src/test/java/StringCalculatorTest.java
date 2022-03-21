@@ -14,7 +14,14 @@ class StringCalculatorTest {
     public void emptyStringTest() throws Exception {
 
         assertThat(stringCalculator.add(""), is(0));
-        
+
+    }
+
+    //Un solo número devuelve el valor
+    @Test
+    public void singleNumberRerturnValueTest() throws Exception {
+        assertThat(stringCalculator.add("2"), is(2));
+        assertThat(stringCalculator.add("5"), is(5));
     }
 
 }
